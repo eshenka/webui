@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <ul class="header-info">
+            <li><a href="#">Intro</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Sign up</a></li>
+            <li><a href="#">Log in</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="big-cat-image left"><img id="grass-cats" src="pic1.jpg" alt="really cute cats"></div>
+        <div class="text">
+        <p>Cute cats are adorable animals that always bring a smile to our faces. They have a unique appearance and
+personality that makes them irresistible to many people. Cats have a way of purring and rubbing against us, which
+can be very comforting and calming. They also have a playful and curious nature, which makes them entertaining to
+watch and interact with.</p>
+
+<p>One of the reasons why cats are so adorable is their small size. Cats are generally smaller than dogs or other
+animals, and their slender bodies make them look more delicate and vulnerable. This vulnerability can be
+endearing, as it makes us want to protect and care for these little creatures.</p>
+
+<p>Another reason why cats are so cute is their facial expressions. Cats have a wide range of expressions, from happy
+and playful to curious and inquisitive. These expressions can vary depending on the cat's mood and environment,
+but they always convey a sense of warmth and affection.</p>
+
+<p>Cats also have a unique body language that can be very telling. They often use their tails to communicate, with a
+flick or a twitch indicating different emotions such as excitement or agitation. Their ears are another important
+part of their facial expression, as they can move in response to different situations and emotions.</p>
+
+<p>Overall, cats are adorable animals that bring joy and comfort to many people's lives. Whether you have a cat or
+not, you can't help but appreciate their cuteness and affectionate nature.</p></div>
+
+        <div class="form">
+            <form class="comment-form" method="post">
+                <h3>Sing up for montly updates on our cats!</h3>
+                <label for="name">Name:</label><br>
+                <input name="name" value="Anonymous" type="text">
+                <br>
+                <label for="email">Email:</label><br>
+                <input name="email" type="email" placeholder="cute@cat.mew">
+                <br>
+                <label for="comment">Comment:</label><br>
+                <textarea rows="10" name="comment" class="comment"></textarea><br>
+                <button class="paw" disabled id="paw" type="submit"><span>Send</span></button>
+            </form>
+        </div>
+
+        <div class="comments"></div>
+</main>
+
+</body>
+
+</html>
+
+
+<script>
+    const USERID = {
+        name: null,
+        email: null,
+        message: null,
+    }
+    
+    const userComment = document.querySelector(".comment");
+    const publishBtn = document.querySelector("#paw");
+    const comments = document.querySelector(".comments");
+    const userName = document.querySelector(".name");
+    
+        userComment.addEventListener("input", e => {
+            if(!userComment.value) {
+                publishBtn.setAttribute("disabled", "disabled");
+                publishBtn.classList.remove("abled")
+            }else {
+                publishBtn.removeAttribute("disabled");
+                publishBtn.classList.add("abled")
+            }
+        })
+    
+        function addPost() {
+            if(!userComment.value) return;
+            USERID.name = userName.value;
+
+            USERID.message = userComment.value;
+            let published = 
+            `<div class="parents">
+                <div>
+                    <h1>${USERID.name}</h1>
+                    <p>${USERID.message}</p>
+                </div>    
+            </div>`
+    
+            comments.innerHTML += published;
+            userComment.value = "";
+            publishBtn.classList.remove("abled")
+    
+            let commentsNum = document.querySelectorAll(".parents").length;
+            document.getElementById("comment").textContent = commentsNum;
+    
+        }
+    
+        publishBtn.addEventListener("click", addPost);
+    
+    </script>

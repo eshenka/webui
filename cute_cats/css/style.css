@@ -1,0 +1,106 @@
+
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+.header-info {
+    color: #4d4a4a;
+    background-color: lightblue;
+    list-style-type: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: left;
+    margin: 0;
+    border-radius: 2rem;
+}
+
+.header-info img {
+    width: 200px;
+}
+
+.header-info li {
+    display: inline-block;
+    margin-inline: 0.5rem;
+}
+
+.header-info li a {
+    color: rgb(24, 82, 101);
+    text-decoration: none;
+}
+
+.header-info li:nth-child(4), li:nth-child(3) {
+    float: right;
+}
+
+
+.header-info a:hover, .header-info li a:focus {
+    background-color: rgb(198, 223, 232);
+    border-radius: 2rem;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+main {
+    background-color: rgb(223, 235, 239);
+    border-radius: 2rem;
+}
+
+#grass-cats {
+    width: 200px;
+}
+
+.big-cat-image {
+    margin: 0.5rem;
+    padding: 1rem;
+}
+
+.left {
+    float: left;
+}
+
+main div {
+    padding: 0.5rem;
+}
+
+.form {
+    margin: 0 auto;
+    width: 50%;
+    align-items: center;
+}
+
+.form form {
+    display: block;
+    text-align: center;
+}
+
+button {
+    background-color: transparent;
+    background-size: cover;
+    border: none;
+    background-image: url(../paw.png);
+    width: 250px;
+    height: 250px;
+    color: rgb(250, 161, 178);
+    font-weight: bold;
+    font-size: 30px
+}
+
+button span {
+    background-color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 50rem;
+    margin-left: 30px;
+}
+/* 
+.form label {
+    width: 50%;
+} */
