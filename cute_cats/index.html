@@ -18,7 +18,7 @@
 
     <main>
         <div class="big-cat-image left"><img id="grass-cats" src="pic1.jpg" alt="really cute cats"></div>
-        <div class="text">
+        <div class="text" id="textik">
         <p>Cute cats are adorable animals that always bring a smile to our faces. They have a unique appearance and
 personality that makes them irresistible to many people. Cats have a way of purring and rubbing against us, which
 can be very comforting and calming. They also have a playful and curious nature, which makes them entertaining to
@@ -49,63 +49,37 @@ not, you can't help but appreciate their cuteness and affectionate nature.</p></
                 <input name="email" type="email" placeholder="cute@cat.mew">
                 <br>
                 <label for="comment">Comment:</label><br>
-                <textarea rows="10" name="comment" class="comment"></textarea><br>
-                <button class="paw" disabled id="paw" type="submit"><span>Send</span></button>
+                <textarea rows="5" name="comment" class="comment"></textarea><br>
+                <!-- <input name="comment" class="comment"> -->
+                <button class="paw" id="paw" type="button" onClick="onClick()"><span>Send</span></button>
             </form>
         </div>
 
-        <div class="comments"></div>
-</main>
-
+        <div class="comments">
+            <h3>my comments</h3>
+        </div>
+    </main>
 </body>
-
 </html>
 
 
 <script>
-    const USERID = {
-        name: null,
-        email: null,
-        message: null,
-    }
-    
-    const userComment = document.querySelector(".comment");
-    const publishBtn = document.querySelector("#paw");
-    const comments = document.querySelector(".comments");
-    const userName = document.querySelector(".name");
-    
-        userComment.addEventListener("input", e => {
-            if(!userComment.value) {
-                publishBtn.setAttribute("disabled", "disabled");
-                publishBtn.classList.remove("abled")
-            }else {
-                publishBtn.removeAttribute("disabled");
-                publishBtn.classList.add("abled")
-            }
-        })
-    
-        function addPost() {
-            if(!userComment.value) return;
-            USERID.name = userName.value;
+    test = document.querySelector(".comments");
 
-            USERID.message = userComment.value;
-            let published = 
-            `<div class="parents">
-                <div>
-                    <h1>${USERID.name}</h1>
-                    <p>${USERID.message}</p>
-                </div>    
-            </div>`
-    
-            comments.innerHTML += published;
-            userComment.value = "";
-            publishBtn.classList.remove("abled")
-    
-            let commentsNum = document.querySelectorAll(".parents").length;
-            document.getElementById("comment").textContent = commentsNum;
-    
-        }
-    
-        publishBtn.addEventListener("click", addPost);
-    
-    </script>
+    const container = `
+        <div id='container'>
+            <button id='btn-1' onClick="onClick()">button</button>
+        </div>`;
+
+    // test.innerHTML += container;
+
+    // for (i = 0; i < 10; i++) {
+    //     test.innerHTML += container;
+    // }
+
+    // document.body.innerHTML += container; 
+
+    function onClick() {
+        test.innerHTML += container;
+    }
+</script>
